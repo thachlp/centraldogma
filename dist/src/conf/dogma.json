@@ -37,5 +37,13 @@
   },
   "csrfTokenRequiredForThrift": null,
   "accessLogFormat": "common",
-  "authentication": null
+  "authentication": {
+    "factoryClassName": "com.linecorp.centraldogma.server.auth.shiro.ShiroAuthProviderFactory",
+    "administrators": ["admin"],
+    "caseSensitiveLoginNames": false,
+    "sessionCacheSpec": "maximumSize=8192,expireAfterWrite=604800s",
+    "sessionTimeoutMillis": 604800000,
+    "sessionValidationSchedule": "0 30 */4 ? * *",
+    "properties": "./conf/shiro.ini"
+  }
 }
